@@ -30,7 +30,20 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f3ef;
+      background-image:
+        radial-gradient(circle at 10% 10%, rgba(200, 16, 46, 0.18) 0%, transparent 14%),
+        radial-gradient(circle at 90% 20%, rgba(255,255,255,0.42) 0%, transparent 12%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.12) 1px, transparent 1px, transparent 20px);
+      background-attachment: fixed;
+      background-size: 260px 260px;
+      background-blend-mode: normal, overlay, normal;
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
     /* Clean Typography Hierarchy */
     h1, h2, h3, h4, .logo { font-family: 'Playfair Display', serif; }
@@ -70,7 +83,7 @@
 
     /* Hero Section with Premium Luxury Background Image */
     .hero { 
-      background: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1800&auto=format&fit=crop'); 
+      background: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.85)), url('assets/home.jpeg'); 
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -82,7 +95,19 @@
     .hero p { font-size: 1.25rem; font-weight: 300; opacity: 0.85; margin: 0 auto 3rem auto; }
 
     /* Services Section */
-    section { padding: var(--section-padding); }
+    section { padding: var(--section-padding); position: relative; overflow: hidden; }
+    section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 12% 18%, rgba(200, 16, 46, 0.1) 0%, transparent 16%),
+                        radial-gradient(circle at 88% 12%, rgba(255,255,255,0.24) 0%, transparent 12%),
+                        repeating-linear-gradient(45deg, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.12) 1px, transparent 1px, transparent 16px);
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+    }
+    section > .container { position: relative; z-index: 2; }
     .bg-subtle-fancy { background: linear-gradient(135deg, rgba(250,247,245,1) 0%, rgba(253,251,249,1) 100%); }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
     .service-card { background: white; padding: 3.5rem 2.5rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); box-shadow: var(--depth-sm); }
@@ -90,6 +115,51 @@
     .service-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.8rem; display: block; }
     .service-card h3 { font-size: 1.5rem; margin-bottom: 1.2rem; color: var(--dark); }
     .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .pricing-card { background: white; border: 1px solid rgba(200, 16, 46, 0.12); border-radius: 18px; padding: 2.5rem; box-shadow: var(--depth-sm); transition: var(--transition); }
+    .pricing-card:hover { transform: translateY(-6px); box-shadow: var(--depth-lg); }
+    .pricing-card h3 { margin-bottom: 0.75rem; color: var(--dark); }
+    .pricing-card .price { font-size: 2.4rem; font-weight: 700; color: var(--primary); margin: 1rem 0; }
+    .pricing-card p { color: var(--text-muted); margin-bottom: 1.5rem; }
+    .pricing-card ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+    .pricing-card ul li { margin-bottom: 0.8rem; color: var(--text-muted); }
+    .pricing-card .cta { margin-top: 1rem; display: inline-flex; padding: 0.9rem 1.8rem; border-radius: 999px; border: 1.5px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 600; transition: var(--transition); }
+    .pricing-card .cta:hover { background: var(--primary); color: white; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .gallery-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--depth-sm);
+      background: white;
+      transition: var(--transition);
+    }
+    .gallery-card:hover { transform: translateY(-6px); box-shadow: var(--depth-lg); }
+    .gallery-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-info {
+      padding: 1.75rem;
+    }
+    .gallery-info h4 {
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      font-size: 1.4rem;
+    }
+    .gallery-info p {
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
 
     /* --- PORTFOLIO SLIDESHOW SECTION --- */
     .portfolio-slider-container { position: relative; overflow: hidden; width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 6%; }
@@ -251,6 +321,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#prices">Prices</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -284,6 +355,83 @@
       </div>
     </section>
 
+    <section id="prices" class="bg-light">
+      <div class="container">
+        <h2 class="section-title reveal">Pricing</h2>
+        <div class="pricing-grid reveal">
+          <div class="pricing-card">
+            <h3>Starter</h3>
+            <div class="price">$5,000+</div>
+            <p>Elegant production for intimate gatherings and boutique celebrations.</p>
+            <ul>
+              <li>Venue sourcing support</li>
+              <li>Lighting & décor concept</li>
+              <li>Day-of coordination</li>
+            </ul>
+            <a href="#contact" class="cta">Request a quote</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Signature</h3>
+            <div class="price">$9,500+</div>
+            <p>Reliable planning and full creative execution for weddings, corporate events, and socials.</p>
+            <ul>
+              <li>Full production design</li>
+              <li>Vendor management</li>
+              <li>On-site event direction</li>
+            </ul>
+            <a href="#contact" class="cta">Request a quote</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Premium</h3>
+            <div class="price">$15,000+</div>
+            <p>Luxury event staging with custom entertainment, AV, branding, and guest experience.</p>
+            <ul>
+              <li>Concept development</li>
+              <li>Advanced AV & staging</li>
+              <li>Post-event reporting</li>
+            </ul>
+            <a href="#contact" class="cta">Request a quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="bg-subtle-fancy">
+      <div class="container">
+        <h2 class="section-title reveal">Our Events Gallery</h2>
+        <div class="gallery-grid reveal">
+          <div class="gallery-card">
+            <img src="assets/chik.jpeg" alt="Elegant guest celebration">
+            <div class="gallery-info">
+              <h4>Chic Celebration</h4>
+              <p>Warm, intimate design with a modern event flow.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/eatin.jpeg" alt="Dining setup for luxury event">
+            <div class="gallery-info">
+              <h4>Dining Highlights</h4>
+              <p>Every meal is styled to create an unforgettable guest experience.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/many.jpeg" alt="Large event crowd enjoying festivities">
+            <div class="gallery-info">
+              <h4>Large Gatherings</h4>
+              <p>Flowing spaces crafted to support big moments and memorable networking.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/plak.jpeg" alt="Event branding and decorative plaque">
+            <div class="gallery-info">
+              <h4>Branded Details</h4>
+              <p>Custom touches and signage that elevate the whole event story.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="portfolio" class="bg-light">
       <div class="container">
         <h2 class="section-title reveal">Featured productions</h2>
@@ -293,16 +441,16 @@
           <button class="slider-control slider-prev" id="prevSlidePortfolio" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
           <div class="portfolio-slider" id="portfolioSlider">
             <div class="portfolio-item active-slide">
-              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Corporate Tech Summit Production">
-              <div class="portfolio-info"><h4>Tech Summit 2025</h4><p>Keynotes, networking hubs, immersive afterparty.</p></div>
+              <img src="assets/best.jpeg" alt="Corporate event production premium setup">
+              <div class="portfolio-info"><h4>Red Carpet Corporate</h4><p>Keynotes, networking hubs, immersive afterparty.</p></div>
             </div>
             <div class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop" alt="Emily and James Rustic Vineyard Wedding">
-              <div class="portfolio-info"><h4>Emily & James</h4><p>Rustic vineyard wedding, flawless planning & design.</p></div>
+              <img src="assets/busy.jpeg" alt="Busy event staff coordinating a production">
+              <div class="portfolio-info"><h4>Seamless Coordination</h4><p>Flawless planning and logistics for every moment.</p></div>
             </div>
             <div class="portfolio-item">
-              <img src="https://images.unsplash.com/photo-1561489422-45de3d015e3e?q=80&w=1200&auto=format&fit=crop" alt="Luxury Charity Gala Setup">
-              <div class="portfolio-info"><h4>Charity Gala</h4><p>500 guests · live music & interactive auction.</p></div>
+              <img src="assets/happy.jpeg" alt="Guests enjoying a luxury event celebration">
+              <div class="portfolio-info"><h4>Joyful Celebrations</h4><p>Luxury social experiences with beautiful atmosphere and energy.</p></div>
             </div>
           </div>
           <button class="slider-control slider-next" id="nextSlidePortfolio" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
@@ -383,13 +531,13 @@
             </form>
           </div>
           <div class="contact-info reveal">
-            <h3>Red Standard</h3>
+            <h3>Contact Persons</h3>
             <ul class="info-list">
-              <li><i class="fas fa-check-circle"></i> Over 150+ successful luxury events</li>
-              <li><i class="fas fa-check-circle"></i> 24/7 dedicated on-site coordination</li>
-              <li><i class="fas fa-check-circle"></i> Transparent custom budgeting</li>
+              <li><i class="fas fa-user-check"></i> Edgar Tamale - <strong>+49 151 5295 8898</strong></li>
+              <li><i class="fas fa-user-check"></i> Raymond Luyima - <strong>+49 157 5476 1731</strong></li>
+              <li><i class="fas fa-map-marker-alt"></i> Ollenhauerstr. 99, 13403 Berlin</li>
             </ul>
-            <p class="info-para">Let's discuss your vision.<br> <strong>+1 (555) 789-2345</strong><br>hello@redevents.com</p>
+            <p class="info-para">Available for event planning inquiries and bookings. We’ll respond quickly to help bring your vision to life.</p>
           </div>
         </div>
       </div>
