@@ -1,705 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=yes">
-<title>Red Events | Premium Event Planners</title>
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;1
-4..32,600;14..32,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-
-beta3/css/all.min.css">
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-html {
-scroll-behavior: smooth;
-}
-body {
-font-family: 'Inter', sans-serif;
-background: #fef8f5;
-color: #1e1e1e;
-line-height: 1.5;
-}
-.container {
-max-width: 1280px;
-margin: 0 auto;
-padding: 0 24px;
-}
-/* header & nav */
-header {
-background: #111;
-color: white;
-padding: 20px 0;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.nav-flex {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.logo {
-font-size: 1.8rem;
-font-weight: 800;
-letter-spacing: -0.5px;
-}
-.logo span {
-color: #e31b23;
-}
-.nav-right {
-display: flex;
-align-items: center;
-gap: 2rem;
-}
-.nav-links {
-display: flex;
-gap: 2rem;
-list-style: none;
-}
-.nav-links a {
-color: white;
-text-decoration: none;
-font-weight: 500;
-transition: 0.2s;
-}
-.nav-links a:hover, .nav-links a.active {
-color: #e31b23;
-}
-.btn-outline-light {
-border: 1.5px solid #e31b23;
-padding: 8px 18px;
-border-radius: 40px;
-background: transparent;
-color: white;
-font-weight: 600;
-cursor: pointer;
-transition: 0.2s;
-}
-.btn-outline-light:hover {
-background: #e31b23;
-color: white;
-}
-.menu-toggle {
-display: none;
-background: none;
-border: none;
-color: white;
-font-size: 1.5rem;
-cursor: pointer;
-}
-/* hero */
-.hero {
-background: linear-gradient(135deg, #1a0c0c 0%, #2c1111 100%);
-color: white;
-padding: 100px 0;
-text-align: center;
-}
-.hero h1 {
-font-size: 3.2rem;
-margin-bottom: 1rem;
-line-height: 1.2;
-}
-.hero p {
-font-size: 1.25rem;
-max-width: 700px;
-margin: 0 auto 2rem auto;
-opacity: 0.9;
-}
-.btn-primary {
-background: #e31b23;
-border: none;
-padding: 14px 32px;
-font-size: 1rem;
-font-weight: 700;
-border-radius: 40px;
-color: white;
-cursor: pointer;
-transition: 0.2s;
-display: inline-block;
-text-decoration: none;
-}
-.btn-primary:hover {
-background: #b11218;
-transform: scale(1.02);
-}
-/* sections */
-.section-title {
-font-size: 2.2rem;
-font-weight: 700;
-margin-bottom: 2rem;
-text-align: center;
-position: relative;
-}
-.section-title:after {
-content: '';
-display: block;
-width: 70px;
-height: 4px;
-background: #e31b23;
-margin: 12px auto 0;
-border-radius: 2px;
-}
-section {
-padding: 80px 0;
-}
-.bg-light {
-background: #fff7f4;
-}
-/* services grid */
-.services-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-gap: 2rem;
-margin-top: 20px;
-}
-.service-card {
-background: white;
-padding: 2.5rem 1.5rem;
-border-radius: 24px;
-box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-text-align: center;
-transition: 0.2s;
-border: 1px solid #ffe0d9;
-}
-.service-card i {
-font-size: 2.5rem;
-color: #e31b23;
-margin-bottom: 1.2rem;
-}
-.service-card h3 {
-margin-bottom: 0.75rem;
-font-size: 1.3rem;
-}
-/* portfolio grid */
-.portfolio-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.8rem;
-}
-.portfolio-item {
-background: white;
-border-radius: 24px;
-overflow: hidden;
-box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-}
-.portfolio-item img {
-width: 100%;
-height: 240px;
-object-fit: cover;
-display: block;
-}
-.portfolio-info {
-padding: 1.5rem;
-}
-.portfolio-info h4 {
-font-size: 1.25rem;
-margin-bottom: 0.3rem;
-}
-/* testimonials */
-.testimonial-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 2rem;
-}
-.testimonial {
-background: white;
-padding: 2rem;
-border-radius: 24px;
-font-style: italic;
-box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-border-left: 6px solid #e31b23;
-}
-.client-name {
-margin-top: 1rem;
-font-weight: 700;
-font-style: normal;
-color: #555;
-}
-/* quick quote block */
-.quote-box {
-background: #111;
-color: white;
-border-radius: 32px;
-padding: 4rem 2rem;
-text-align: center;
-}
-.quote-form {
-display: flex;
-flex-wrap: wrap;
-gap: 1rem;
-justify-content: center;
-margin-top: 2rem;
-}
-.quote-form input {
-padding: 14px 20px;
-border-radius: 60px;
-border: none;
-font-size: 1rem;
-min-width: 200px;
-}
-/* contact layout */
-.contact-flex {
-display: flex;
-flex-wrap: wrap;
-gap: 3rem;
-margin-top: 2rem;
-}
-.contact-form {
-flex: 1.2;
-}
-.contact-info {
-flex: 0.8;
-background: #fff0ea;
-padding: 2.5rem;
-border-radius: 32px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-.form-group {
-margin-bottom: 1.2rem;
-}
-input, textarea {
-width: 100%;
-padding: 14px 18px;
-border: 1px solid #e2d6d0;
-border-radius: 28px;
-font-family: inherit;
-font-size: 1rem;
-outline: none;
-}
-input:focus, textarea:focus {
-border-color: #e31b23;
-}
-textarea {
-border-radius: 24px;
-resize: vertical;
-}
-button[type="submit"] {
-background: #e31b23;
-color: white;
-border: none;
-padding: 14px 32px;
-border-radius: 40px;
-font-weight: 700;
-cursor: pointer;
-font-size: 1rem;
-transition: background 0.2s;
-}
-button[type="submit"]:hover {
-background: #b11218;
-}
-/* floating widget UI */
-.chat-widget {
-position: fixed;
-bottom: 24px;
-right: 24px;
-z-index: 200;
-}
-.chat-toggle {
-background: #e31b23;
-width: 60px;
-height: 60px;
-border-radius: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-transition: transform 0.2s;
-}
-.chat-toggle:hover {
-transform: scale(1.05);
-}
-.chat-toggle i {
-font-size: 26px;
-color: white;
-}
-.chat-box {
-position: absolute;
-bottom: 80px;
-right: 0;
-width: 340px;
-background: white;
-border-radius: 24px;
-box-shadow: 0 20px 35px rgba(0,0,0,0.15);
-overflow: hidden;
-display: none;
-flex-direction: column;
-border: 1px solid #f0e0d9;
-}
-.chat-header {
-background: #111;
-color: white;
-padding: 16px;
-font-weight: 700;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.chat-messages {
-height: 300px;
-overflow-y: auto;
-padding: 16px;
-background: #faf7f5;
-font-size: 0.9rem;
-display: flex;
-flex-direction: column;
-gap: 12px;
-}
-.bot-msg, .user-msg {
-padding: 10px 14px;
-border-radius: 18px;
-max-width: 85%;
-word-wrap: break-word;
-line-height: 1.4;
-}
-.bot-msg {
-background: #f0e2dc;
-color: #1e1e1e;
-align-self: flex-start;
-border-bottom-left-radius: 4px;
-}
-.user-msg {
-background: #e31b23;
-color: white;
-align-self: flex-end;
-border-bottom-right-radius: 4px;
-}
-.chat-input-area {
-display: flex;
-border-top: 1px solid #eee;
-padding: 12px;
-background: white;
-}
-.chat-input-area input {
-flex: 1;
-border: none;
-padding: 10px 16px;
-border-radius: 40px;
-background: #f0f0f0;
-margin-right: 8px;
-font-size: 0.9rem;
-}
-.chat-input-area button {
-background: #e31b23;
-border: none;
-color: white;
-border-radius: 40px;
-padding: 0 18px;
-font-weight: 600;
-cursor: pointer;
-}
-footer {
-background: #111;
-color: #aaa;
-text-align: center;
-padding: 32px 0;
-font-size: 0.9rem;
-border-top: 1px solid #222;
-}
-/* responsive breakpoints */
-@media (max-width: 900px) {
-.nav-links {
-display: none;
-flex-direction: column;
-position: absolute;
-top: 100%;
-left: 0;
-width: 100%;
-background: #111;
-padding: 20px;
-gap: 1.5rem;
-border-top: 1px solid #222;
-}
-.nav-links.show {
-display: flex;
-}
-.menu-toggle {
-display: block;
-order: 1;
-}
-.btn-outline-light {
-order: 2;
-}
-.nav-right {
-gap: 1rem;
-}
-.hero h1 {
-font-size: 2.4rem;
-}
-.contact-flex {
-flex-direction: column;
-}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Red Events | Premium Event Planners & Production</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* --- Design Token System (Premium Standards) --- */
+    :root {
+      /* Elegant Ruby Red & Deep Charcoal */
+      --primary: #C8102E; 
+      --primary-hover: #A00D25;
+      --dark: #0A0A0A;
+      --dark-muted: #1A1A1A;
+      --light: #FDFBF9; /* Warm Alabaster */
+      --surface: #FFFFFF;
+      --text-main: #2C2C2C;
+      --text-muted: #666666;
+      --border-color: #EAE3DE;
+      /* Seamless Transitions & Depth */
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --depth-sm: 0 4px 12px rgba(0,0,0,0.05);
+      --depth-lg: 0 20px 40px rgba(0,0,0,0.1);
+      --section-padding: 120px 0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+    /* Clean Typography Hierarchy */
+    h1, h2, h3, h4, .logo { font-family: 'Playfair Display', serif; }
+    h1 { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; }
+    h2.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 5rem; color: var(--dark); font-weight: 600; }
+    h2.section-title:after { content: ''; display: block; width: 60px; height: 3px; background: var(--primary); margin: 12px auto 0; border-radius: 2px; }
+
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 6%; }
+
+    /* --- Fancy Multi-Layer Background Decor (CSS-only depth) --- */
+    .fancy-bg-wrapper { position: relative; }
+    .fancy-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.1; z-index: -1; }
+    .blob-primary { background: var(--primary); width: 400px; height: 400px; top: -100px; left: -100px; }
+    .blob-dark { background: var(--dark-muted); width: 500px; height: 500px; bottom: -150px; right: -150px; }
+
+    /* Buttons & Interactive Elements */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 34px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: var(--transition); cursor: pointer; border: none; outline: none; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(200, 16, 46, 0.2); }
+    .btn-outline-light { border: 1.5px solid var(--primary); background: transparent; color: white; }
+    .btn-outline-light:hover { background: var(--primary); border-color: var(--primary); color: white; }
+
+    /* reveal on scroll system */
+    .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Header & Nav (Glassmorphism effect) */
+    header { background: rgba(10, 10, 10, 0.92); color: white; padding: 18px 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.5px; }
+    .logo span { color: var(--primary); font-style: italic; font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 400; font-size: 0.95rem; transition: var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero Section with Premium Luxury Background Image */
+    .hero { 
+      background: linear-gradient(rgba(10, 10, 10, 0.65), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1800&auto=format&fit=crop'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white; 
+      padding: 200px 0 140px 0; 
+      text-align: center; 
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+    .hero p { font-size: 1.25rem; font-weight: 300; opacity: 0.85; margin: 0 auto 3rem auto; }
+
+    /* Services Section */
+    section { padding: var(--section-padding); }
+    .bg-subtle-fancy { background: linear-gradient(135deg, rgba(250,247,245,1) 0%, rgba(253,251,249,1) 100%); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+    .service-card { background: white; padding: 3.5rem 2.5rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); box-shadow: var(--depth-sm); }
+    .service-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: var(--depth-lg); }
+    .service-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.8rem; display: block; }
+    .service-card h3 { font-size: 1.5rem; margin-bottom: 1.2rem; color: var(--dark); }
+    .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* --- PORTFOLIO SLIDESHOW SECTION --- */
+    .portfolio-slider-container { position: relative; overflow: hidden; width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 6%; }
+    .portfolio-slider-wrapper { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; }
+    .portfolio-slider { display: flex; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); width: 100%; }
+    .portfolio-item { flex: 0 0 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--depth-lg); transform: scale(0.9); transition: transform 0.6s ease; }
+    .portfolio-item.active-slide { transform: scale(1.0); z-index: 2; }
+    .portfolio-item img { width: 100%; height: 500px; object-fit: cover; display: block; filter: contrast(1.1); }
+    .portfolio-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem 2.5rem; background: linear-gradient(0deg, rgba(10,10,10,0.9) 0%, transparent 100%); color: white; z-index: 3; text-align: left; }
+    .portfolio-info h4 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 600; }
+    .portfolio-info p { font-size: 1rem; opacity: 0.8; font-weight: 300; font-family: 'Inter', sans-serif; }
+
+    /* Portfolio Slider Controls */
+    .slider-control { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border-radius: 50%; color: white; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: none; cursor: pointer; transition: var(--transition); z-index: 10; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    .slider-control:hover { background: var(--primary); transform: translateY(-50%) scale(1.1); box-shadow: 0 5px 15px rgba(200, 16, 46, 0.2); }
+    .slider-prev { left: -30px; }
+    .slider-next { right: -30px; }
+    .slider-pagination { position: relative; display: flex; justify-content: center; gap: 12px; margin-top: 3rem; z-index: 10; }
+    .pagination-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border-color); border: none; transition: var(--transition); cursor: pointer; }
+    .pagination-dot:hover { background: rgba(200, 16, 46, 0.4); }
+    .pagination-dot.active { background: var(--primary); width: 25px; border-radius: 10px; }
+
+    /* --- CLIENT EXPERIENCES SLIDESHOW SECTION --- */
+    .testimonial-slider-wrapper { max-width: 900px; margin: 0 auto; text-align: center; position: relative; overflow: hidden; padding: 20px; }
+    .testimonial-slider { position: relative; height: 320px; transition: opacity 0.5s ease; }
+    .testimonial-item { position: absolute; width: 100%; top: 0; left: 0; opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease; transform: translateY(20px); text-align: center; display: none; }
+    .testimonial-item.active-testimonial { opacity: 1; transform: translateY(0); display: block; position: relative; }
+    .testimonial p { font-size: 1.25rem; font-style: italic; color: var(--text-main); font-weight: 400; margin-bottom: 2rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.7; font-family: 'Playfair Display', serif; }
+    .testimonial p::before { content: '\201C'; color: var(--primary); font-size: 4rem; position: absolute; left: 0; top: -30px; opacity: 0.1; }
+    .client-name { font-weight: 700; color: var(--dark); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; font-family: 'Inter', sans-serif; }
+    .testimonial-pagination { position: relative; display: flex; justify-content: center; gap: 10px; margin-top: 2rem; z-index: 10; }
+    .testimonial-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-color); border: none; transition: var(--transition); cursor: pointer; }
+    .testimonial-dot.active { background: var(--primary); }
+
+    /* --- REDESIGNED PREMIUM ESTIMATE BLOCK --- */
+    .quote-box { 
+      background: linear-gradient(145deg, #0f0f0f, #1a1a1a); 
+      color: white; 
+      border-radius: 24px; 
+      padding: 5rem 4rem; 
+      text-align: center; 
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35); 
+      margin-top: -60px; 
+      position: relative; 
+      z-index: 5; 
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .quote-box h3 { font-size: 2.2rem; margin-bottom: 0.75rem; color: white; letter-spacing: -0.5px; }
+    .quote-box p.subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.6); margin-bottom: 3.5rem; font-family: 'Inter', sans-serif; }
+    
+    .quote-form-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+      gap: 2rem; 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      text-align: left;
+    }
+    .form-field-wrapper { display: flex; flex-direction: column; gap: 0.6rem; }
+    .form-field-wrapper label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      padding-left: 4px;
+    }
+    .quote-form-grid input { 
+      padding: 16px 24px; 
+      border-radius: 12px; 
+      border: 1px solid rgba(255,255,255,0.12); 
+      background: rgba(255,255,255,0.03); 
+      color: white; 
+      font-size: 1rem; 
+      transition: var(--transition); 
+      outline: none; 
+      font-family: 'Inter', sans-serif; 
+      width: 100%;
+    }
+    .quote-form-grid input:focus { 
+      border-color: var(--primary); 
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.15);
+    }
+    .quote-form-grid input::placeholder { color: rgba(255,255,255,0.3); }
+    .quote-form-grid input[type="month"] { color-scheme: dark; cursor: pointer; }
+    
+    .quote-submit-container { grid-column: 1 / -1; text-align: center; margin-top: 1.5rem; }
+    .quote-submit-container .btn { padding: 16px 50px; font-size: 1rem; }
+
+    /* Contact & Final Fancy BG */
+    .bg-fancy { position: relative; background: linear-gradient(135deg, rgba(250,247,245,1) 0%, rgba(253,251,249,1) 100%); }
+    .contact-flex { display: flex; flex-wrap: wrap; gap: 5rem; margin-top: 3rem; }
+    .contact-form { flex: 1.3; }
+    .contact-info { flex: 0.7; background: var(--dark-muted); color: rgba(255,255,255,0.8); padding: 5rem 4rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; box-shadow: var(--depth-lg); position: relative; overflow: hidden; }
+    .contact-info h3 { font-size: 2rem; margin-bottom: 2rem; color: white; }
+    .info-list { list-style: none; margin-bottom: 3rem; font-family: 'Inter', sans-serif; }
+    .info-list li { display: flex; align-items: center; margin-bottom: 1.2rem; }
+    .info-list i { color: var(--primary); margin-right: 15px; font-size: 1.1rem; }
+    .info-para { font-size: 1.2rem; font-weight: 500; line-height: 1.5; color: white; }
+    .info-para strong { font-size: 1.5rem; }
+
+    .form-group { margin-bottom: 1.8rem; }
+    input:not(.chat-input), textarea { width: 100%; padding: 18px 2px; border: none; border-bottom: 1px solid var(--border-color); background: transparent; font-family: inherit; font-size: 1rem; outline: none; transition: var(--transition); color: var(--text-main); }
+    input:focus, textarea:focus { border-color: var(--primary); }
+    input::placeholder, textarea::placeholder { color: var(--text-muted); opacity: 0.7; }
+    textarea { resize: vertical; min-height: 130px; margin-top: 10px; }
+
+    /* Floating Bot UI (elevated design) */
+    .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 200; }
+    .chat-toggle { background: var(--primary); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 25px rgba(200, 16, 46, 0.3); transition: var(--transition); border: 2px solid rgba(255,255,255,0.1); }
+    .chat-toggle:hover { transform: translateY(-5px); }
+    .chat-toggle i { font-size: 24px; color: white; }
+    .chat-box { position: absolute; bottom: 85px; right: 0; width: 360px; background: white; border-radius: 16px; box-shadow: var(--depth-lg); overflow: hidden; display: none; flex-direction: column; border: 1px solid var(--border-color); transform-origin: bottom right; animation: scaleUpBot 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes scaleUpBot { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    .chat-header { background: var(--dark); color: white; padding: 20px; font-weight: 600; font-family: 'Playfair Display', serif; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .chat-messages { height: 350px; overflow-y: auto; padding: 25px; background: rgba(250,247,245,1); font-size: 0.95rem; display: flex; flex-direction: column; gap: 15px; font-family: 'Inter', sans-serif; }
+    .bot-msg, .user-msg { padding: 12px 18px; border-radius: 12px; max-width: 85%; word-wrap: break-word; line-height: 1.5; }
+    .bot-msg { background: white; color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid var(--border-color); }
+    .user-msg { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 2px; box-shadow: 0 4px 10px rgba(200, 16, 46, 0.15); }
+    .chat-input-area { display: flex; border-top: 1px solid var(--border-color); padding: 15px; background: white; align-items: center; }
+    .chat-input-area input { flex: 1; border: 1px solid var(--border-color); padding: 12px 18px; border-radius: 40px; background: rgba(250,247,245,0.8); margin-right: 12px; font-size: 0.95rem; outline: none; transition: var(--transition); font-family: 'Inter', sans-serif; }
+    .chat-input-area input:focus { border-color: var(--primary); background: white; }
+    .chat-input-area button { background: none; border: none; color: var(--primary); font-size: 1.3rem; cursor: pointer; transition: var(--transition); }
+    .chat-input-area button:hover { transform: scale(1.1); }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.03); font-family: 'Inter', sans-serif; }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .nav-flex { padding: 0 5%; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.98); padding: 3rem; gap: 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+      .nav-links.show { display: flex; }
+      .menu-toggle { display: block; order: 1; }
+      .nav-right .btn { display: none; }
+      .hero h1 { font-size: 2.8rem; }
+      .portfolio-item img { height: 380px; }
+      .slider-control { width: 50px; height: 50px; font-size: 1.2rem; }
+      .slider-prev { left: -10px; }
+      .slider-next { right: -10px; }
+      .quote-box { padding: 4rem 2rem; }
+      .contact-flex { flex-direction: column; gap: 4rem; }
+    }
+    @media (max-width: 768px) {
+      h2.section-title { font-size: 2rem; }
+      .contact-info { padding: 4rem 2rem; }
+      .chat-box { width: calc(100vw - 40px); right: -10px; }
+      .testimonial p { font-size: 1.1rem; }
+      .testimonial-slider { height: 380px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="container nav-flex">
-<div class="logo">RED <span>EVENTS</span></div>
-<div class="nav-right">
-<ul class="nav-links" id="navLinks">
-<li><a href="#" class="active">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<button class="btn-outline-light" id="quickQuoteNavBtn">Get Quote</button>
-<button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</div>
-</header>
-<main>
-<section class="hero">
-<div class="container">
-<h1>Unforgettable events,<br>crafted <span style="color:#e31b23">in
-red</span>.</h1>
-<p>From intimate gatherings to grand galas – Red Events delivers flawless
-production, creative design, and stress-free planning.</p>
-<a href="#contact" class="btn-primary">Hire us →</a>
-</div>
-</section>
-<section id="services">
-<div class="container">
-<h2 class="section-title">What we do</h2>
-<div class="services-grid">
-<div class="service-card"><i class="fas fa-calendar-check"></i><h3>Corporate
-Events</h3><p>Conferences, product launches, team building.</p></div>
-<div class="service-card"><i class="fas fa-ring"></i><h3>Weddings &
-Parties</h3><p>Personalized celebrations that wow your guests.</p></div>
-<div class="service-card"><i class="fas fa-champagne-glasses"></i><h3>Social
-Galas</h3><p>Anniversaries, fundraisers, exclusive soirées.</p></div>
-<div class="service-card"><i class="fas fa-video"></i><h3>Virtual &
-Hybrid</h3><p>Seamless online + in-person experiences.</p></div>
-</div>
-</div>
-</section>
-<section id="portfolio" class="bg-light">
-<div class="container">
-<h2 class="section-title">Recent events</h2>
-<div class="portfolio-grid">
-<div class="portfolio-item"><img
-src="https://placehold.co/600x400/eaddd7/1e1e1e?text=Gala+Dinner" alt="Gala"><div
-class="portfolio-info"><h4>Charity Gala</h4><p>500 guests · live music &
-auction</p></div></div>
-<div class="portfolio-item"><img
-src="https://placehold.co/600x400/d4c5bd/1e1e1e?text=Corporate+Summit"
-alt="Corporate"><div class="portfolio-info"><h4>Tech Summit 2025</h4><p>Keynotes,
-networking, afterparty</p></div></div>
-<div class="portfolio-item"><img
-src="https://placehold.co/600x400/f3e1d9/1e1e1e?text=Wedding" alt="Wedding"><div
-class="portfolio-info"><h4>Emily & James</h4><p>Rustic vineyard
-wedding</p></div></div>
-</div>
-</div>
-</section>
-<section>
-<div class="container">
-<h2 class="section-title">What clients say</h2>
-<div class="testimonial-grid">
-<div class="testimonial">“Red Events made our conference seamless. The team’s
-attention to detail was incredible.”<div class="client-name">— Sarah, Marketing
-Dir.</div></div>
-<div class="testimonial">“Our wedding was a dream come true. Every guest is still
-talking about it!”<div class="client-name">— Priya & Michael</div></div>
-<div class="testimonial">“Fast, creative, and professional. They saved us when
-another planner canceled last minute.”<div class="client-name">— Carlos, Nonprofit
-Lead</div></div>
-</div>
-</div>
-</section>
-<section class="bg-light" id="quoteSection">
-<div class="container quote-box">
-<h3 style="color:white; font-size:1.8rem;">Quick estimate</h3>
-<p style="margin-bottom:0.5rem;">Tell us a few details → we’ll reply within 2
-hours.</p>
-<div class="quote-form">
-<input type="text" placeholder="Event type (e.g., Wedding)" id="quoteEvent">
-<input type="number" placeholder="Guests" id="quoteGuests">
-<input type="month" id="quoteMonth">
-<button class="btn-primary" id="submitQuoteBtn">Get rough price →</button>
-</div>
-<p id="quoteResult" style="margin-top:1.5rem; font-size:1.1rem; font-weight:600;
-color:#ffb3b5; min-height: 24px;"></p>
-</div>
-</section>
-<section id="contact">
-<div class="container">
-<h2 class="section-title">Let’s create together</h2>
-<div class="contact-flex">
-<div class="contact-form">
-<form id="contactForm">
-<div class="form-group"><input type="text" placeholder="Full name"
-required></div>
-<div class="form-group"><input type="email" placeholder="Email address"
-required></div>
-<div class="form-group"><input type="tel" placeholder="Phone
-(optional)"></div>
-<div class="form-group"><textarea rows="4" placeholder="Tell us about your
-event... date, style, budget"></textarea></div>
-<button type="submit">Send inquiry →</button>
-<p id="formFeedback" style="margin-top:12px; font-size:0.9rem; font-weight:
-600; color: green;"></p>
-</form>
-</div>
-<div class="contact-info">
-<h3 style="font-size: 1.5rem;">Why Red Events?</h3>
-<ul style="margin-top:1.2rem; list-style:none; display:flex; flex-direction:column;
-gap:10px;">
-<li><i class="fas fa-check-circle" style="color:#e31b23; margin-right:8px;"></i>
-150+ successful events</li>
-<li><i class="fas fa-check-circle" style="color:#e31b23; margin-right:8px;"></i>
-24/7 on-site coordination</li>
-<li><i class="fas fa-check-circle" style="color:#e31b23; margin-right:8px;"></i>
-Custom design & budgeting</li>
-</ul>
-<p style="margin-top:2rem; font-size:1.1rem;"><strong> +1 (555) 789-
-2345</strong><br>hello@redevents.com</p>
-<p style="margin-top:1rem; color:#666;"><small>Or ask our chatbot below – it
-answers FAQs instantly!</small></p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-<p>© 2026 Red Events – Crafting moments in red. All rights reserved.</p>
-</div>
-</footer>
-<div class="chat-widget">
-<div class="chat-toggle" id="chatToggle">
-<i class="fas fa-comment-dots"></i>
-</div>
-<div class="chat-box" id="chatBox">
-<div class="chat-header">
-<span> Red Events Assistant</span>
-<span style="cursor:pointer; font-size:1.2rem;" id="closeChat">✕</span>
-</div>
-<div class="chat-messages" id="chatMessages">
-<div class="bot-msg">Hey there! I can answer FAQs regarding pricing, availability,
-cancellation policies, or timeline queries. Ask me anything!</div>
-</div>
-<div class="chat-input-area">
-<input type="text" id="chatInput" placeholder="Type your question...">
-<button id="sendChat">Send</button>
-</div>
-</div>
-</div>
-<script>
-// Mobile Responsive Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', () => {
-navLinks.classList.toggle('show');
-const icon = menuToggle.querySelector('i');
-icon.classList.toggle('fa-bars');
-icon.classList.toggle('fa-xmark');
-});
-// Header Get Quote Action Scroll
-document.getElementById('quickQuoteNavBtn').addEventListener('click', () => {
-document.getElementById('quoteSection').scrollIntoView({ behavior: 'smooth' });
-if(navLinks.classList.contains('show')) {
-menuToggle.click(); // Autoclose mobile navbar menu
-}
-});
-// Estimator pricing computation engine
-document.getElementById('submitQuoteBtn').addEventListener('click', () => {
-let guests = parseInt(document.getElementById('quoteGuests').value);
-let eventType = document.getElementById('quoteEvent').value.trim() || "event";
-let outputField = document.getElementById('quoteResult');
-if(!guests || guests <= 0) {
-outputField.innerText = " Please enter a valid number of guests.";
-return;
-}
-if(guests < 20) {
-outputField.innerText = ` For an intimate ${eventType} with ~${guests} guests,
-typical range: $3,000 - $8,000.`;
-} else if(guests >= 100) {
-outputField.innerText = ` For a grand scale ${eventType} with ${guests} guests,
-estimate $12,000 - $25,000+.`;
-} else {
-outputField.innerText = ` Based on ${guests} guests for your ${eventType}:
-approximately $5,000 - $15,000.`;
-}
-});
-// Contact form alert system
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-e.preventDefault();
-const feedback = document.getElementById('formFeedback');
-feedback.innerHTML = ' Thanks! We’ll get back to you within 24 hours.';
-document.getElementById('contactForm').reset();
-setTimeout(() => feedback.innerHTML='', 4000);
-});
-// Chatbot operational core engine
-const chatToggle = document.getElementById('chatToggle');
-const chatBox = document.getElementById('chatBox');
-const closeChat = document.getElementById('closeChat');
-const sendBtn = document.getElementById('sendChat');
-const chatInput = document.getElementById('chatInput');
-const chatMessages = document.getElementById('chatMessages');
-function addMessage(text, isUser = false) {
-const msgDiv = document.createElement('div');
-msgDiv.className = isUser ? 'user-msg' : 'bot-msg';
-msgDiv.innerText = text;
-chatMessages.appendChild(msgDiv);
-chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-function botReply(userMessage) {
-const lowerMsg = userMessage.toLowerCase();
-if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('pricing')
-|| lowerMsg.includes('how much')) {
-return "Our operational tier starts at $5k for small parties, and $12k for mid-size
-weddings/corporate productions. Full breakdown profiles are processed postconsultation!";
-} else if (lowerMsg.includes('availability') || lowerMsg.includes('booked') ||
-lowerMsg.includes('free date')) {
-return "We are usually reserved 2-3 months in advance. For prime booking seasons
-(May-October), please get in touch 4 months early to guarantee staging spaces.";
-} else if (lowerMsg.includes('timeline') || lowerMsg.includes('planning') ||
-lowerMsg.includes('how long')) {
-return "Standard project engineering phases scale across 3-6 months. Urgent
-requirements can step into our rapid tactical loop (under 6 weeks) on special provisions.";
-} else if (lowerMsg.includes('deposit') || lowerMsg.includes('cancel')) {
-return "A 30% safety deposit holds the active date block. You have structural policy
-allowances for complete cancellations up to 60 days prior to the calendar timeline
-milestone.";
-} else if (lowerMsg.includes('what events') || lowerMsg.includes('do you do') ||
-lowerMsg.includes('services')) {
-return "We specialize explicitly in corporate milestones, high-concept weddings,
-curated private social events, fundraisers, and real-time hybrid productions.";
-} else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') ||
-lowerMsg.includes('hey')) {
-return "Hello! Let me know if you need parameters regarding our event planning
-execution frameworks, timelines, or layout strategies.";
-} else {
-return "Understood. Our team will read this file and trigger a personal response
-workflow within 1 hour. Feel free to contact hello@redevents.com directly.";
-}
-}
-function sendMessage() {
-const msg = chatInput.value.trim();
-if (msg === "") return;
-addMessage(msg, true);
-chatInput.value = "";
-setTimeout(() => {
-addMessage(botReply(msg), false);
-}, 300);
-}
-chatToggle.addEventListener('click', () => {
-chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
-});
-closeChat.addEventListener('click', () => chatBox.style.display = 'none');
-sendBtn.addEventListener('click', sendMessage);
-chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
-</script>
+  <header>
+    <div class="container nav-flex">
+      <div class="logo">Red <span>Events</span></div>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="btn btn-outline-light" id="quickQuoteNavBtn">Get Quote</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero fancy-bg-wrapper">
+      <div class="fancy-blob blob-primary"></div>
+      <div class="container hero-content reveal">
+        <h1>Unforgettable events,<br>crafted <span>in red</span>.</h1>
+        <p>From intimate gatherings to grand galas – Red Events delivers flawless production, creative design, and stress-free planning tailored to your vision.</p>
+        <a href="#contact" class="btn btn-primary">Plan Your Event Together <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+      </div>
+    </section>
+
+    <section id="services" class="bg-subtle-fancy">
+      <div class="container">
+        <h2 class="section-title reveal">What we do</h2>
+        <div class="services-grid">
+          <div class="service-card reveal"><i class="fas fa-building"></i><h3>Corporate Events</h3><p>Conferences, product launches, team building. High impact productions.</p></div>
+          <div class="service-card reveal"><i class="fas fa-ring"></i><h3>Weddings & Parties</h3><p>Personalized celebrations. Creative design that wows your guests.</p></div>
+          <div class="service-card reveal"><i class="fas fa-champagne-glasses"></i><h3>Social Galas</h3><p>Anniversaries, fundraisers, exclusive soirées with a focus on elegance.</p></div>
+          <div class="service-card reveal"><i class="fas fa-video"></i><h3>Virtual & Hybrid</h3><p>Seamless online + in-person experiences, bridging global gaps.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="bg-light">
+      <div class="container">
+        <h2 class="section-title reveal">Featured productions</h2>
+      </div>
+      <div class="portfolio-slider-container reveal">
+        <div class="portfolio-slider-wrapper">
+          <button class="slider-control slider-prev" id="prevSlidePortfolio" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+          <div class="portfolio-slider" id="portfolioSlider">
+            <div class="portfolio-item active-slide">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Corporate Tech Summit Production">
+              <div class="portfolio-info"><h4>Tech Summit 2025</h4><p>Keynotes, networking hubs, immersive afterparty.</p></div>
+            </div>
+            <div class="portfolio-item">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop" alt="Emily and James Rustic Vineyard Wedding">
+              <div class="portfolio-info"><h4>Emily & James</h4><p>Rustic vineyard wedding, flawless planning & design.</p></div>
+            </div>
+            <div class="portfolio-item">
+              <img src="https://images.unsplash.com/photo-1561489422-45de3d015e3e?q=80&w=1200&auto=format&fit=crop" alt="Luxury Charity Gala Setup">
+              <div class="portfolio-info"><h4>Charity Gala</h4><p>500 guests · live music & interactive auction.</p></div>
+            </div>
+          </div>
+          <button class="slider-control slider-next" id="nextSlidePortfolio" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-pagination" id="portfolioPagination"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title reveal">What clients say</h2>
+        <div class="testimonial-slider-wrapper reveal">
+          <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial-item active-testimonial">
+              <div class="testimonial">
+                <p>"Red Events made our conference completely seamless. The team’s attention to detail was nothing short of incredible."</p>
+                <div class="client-name">Sarah Jenkins, Marketing Dir.</div>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial">
+                <p>"Our wedding was a dream come true. Every single guest is still talking about the creative design and flawless execution!"</p>
+                <div class="client-name">Priya & Michael</div>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial">
+                <p>"Fast, highly creative, and professional. They saved us when another planner canceled last minute. A remarkable group."</p>
+                <div class="client-name">Carlos T., Nonprofit Lead</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-pagination" id="testimonialPagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quoteSection" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="quote-box reveal">
+          <h3>Request an Estimate</h3>
+          <p class="subtitle">Provide a few details below and our team will reply within 2 hours with a high-level framework.</p>
+          <div class="quote-form-grid">
+            <div class="form-field-wrapper">
+              <label for="quoteEvent">Event Type</label>
+              <input type="text" placeholder="e.g., Wedding, Corporate Gala" id="quoteEvent">
+            </div>
+            <div class="form-field-wrapper">
+              <label for="quoteGuests">Expected Guests</label>
+              <input type="number" placeholder="Estimated Count" id="quoteGuests">
+            </div>
+            <div class="form-field-wrapper">
+              <label for="quoteMonth">Target Date</label>
+              <input type="month" id="quoteMonth">
+            </div>
+            <div class="quote-submit-container">
+              <button class="btn btn-primary" id="submitQuoteBtn">Get Preliminary Estimate</button>
+            </div>
+          </div>
+          <p id="quoteResult" style="margin-top:2rem; font-size:1.1rem; font-family:'Inter'; color:#FFB3B5; min-height: 24px; font-weight: 500;"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-fancy fancy-bg-wrapper">
+      <div class="fancy-blob blob-dark"></div>
+      <div class="container">
+        <h2 class="section-title reveal">Let’s create together</h2>
+        <div class="contact-flex">
+          <div class="contact-form reveal">
+            <form id="contactForm">
+              <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+              <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+              <div class="form-group"><input type="tel" placeholder="Phone Number (optional)"></div>
+              <div class="form-group"><textarea placeholder="Tell us about your event... date, style, budget..."></textarea></div>
+              <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Send Inquiry <i class="fas fa-paper-plane" style="margin-left: 10px;"></i></button>
+              <p id="formFeedback" style="margin-top:16px; font-size:0.95rem; font-weight: 600; color: #28a745;"></p>
+            </form>
+          </div>
+          <div class="contact-info reveal">
+            <h3>Red Standard</h3>
+            <ul class="info-list">
+              <li><i class="fas fa-check-circle"></i> Over 150+ successful luxury events</li>
+              <li><i class="fas fa-check-circle"></i> 24/7 dedicated on-site coordination</li>
+              <li><i class="fas fa-check-circle"></i> Transparent custom budgeting</li>
+            </ul>
+            <p class="info-para">Let's discuss your vision.<br> <strong>+1 (555) 789-2345</strong><br>hello@redevents.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Red Events – Crafting moments in red. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="chat-widget">
+    <div class="chat-toggle" id="chatToggle" aria-label="Open Chat Concierge">
+      <i class="fas fa-comment-dots"></i>
+    </div>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <span>Red Events Concierge</span>
+        <span style="cursor:pointer; font-size:1.3rem;" id="closeChat">✕</span>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="bot-msg">Hey there! I can answer FAQs regarding pricing frameworks, availability, or planning timelines. How may I assist?</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your message..." class="chat-input">
+        <button id="sendChat" aria-label="Send Message"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile Responsive Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    // Header Get Quote Action Scroll
+    document.getElementById('quickQuoteNavBtn').addEventListener('click', () => {
+      document.getElementById('quoteSection').scrollIntoView({ behavior: 'smooth' });
+      if(navLinks.classList.contains('show')) { menuToggle.click(); }
+    });
+
+    // Estimator pricing computation engine
+    document.getElementById('submitQuoteBtn').addEventListener('click', () => {
+      let guests = parseInt(document.getElementById('quoteGuests').value);
+      let eventType = document.getElementById('quoteEvent').value.trim() || "event";
+      let outputField = document.getElementById('quoteResult');
+      if(!guests || guests <= 0) {
+        outputField.innerText = "Please enter a valid estimated guest count.";
+        return;
+      }
+      if(guests < 20) {
+        outputField.innerText = `For an intimate ${eventType} of ~${guests} guests, typical range: $3,000 - $8,000.`;
+      } else if(guests >= 100) {
+        outputField.innerText = `For a grand scale ${eventType} of ${guests} guests, anticipate $12,000 - $25,000+.`;
+      } else {
+        outputField.innerText = `Based on ${guests} guests for your ${eventType}: approximately $5,000 - $15,000.`;
+      }
+    });
+
+    // Contact form alert system
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const feedback = document.getElementById('formFeedback');
+      feedback.innerHTML = '<i class="fas fa-check-circle"></i> Thanks! We’ll get back to you within 24 hours.';
+      document.getElementById('contactForm').reset();
+      setTimeout(() => feedback.innerHTML='', 5000);
+    });
+
+    // --- PORTFOLIO SLIDESHOW CONFIGURATION ---
+    const portfolioSlider = document.getElementById('portfolioSlider');
+    const portfolioSlides = portfolioSlider.querySelectorAll('.portfolio-item');
+    const prevBtnPortfolio = document.getElementById('prevSlidePortfolio');
+    const nextBtnPortfolio = document.getElementById('nextSlidePortfolio');
+    const paginationPortfolio = document.getElementById('portfolioPagination');
+    let currentIndexPortfolio = 0;
+
+    portfolioSlides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = `pagination-dot ${index === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      dot.addEventListener('click', () => goToSlidePortfolio(index));
+      paginationPortfolio.appendChild(dot);
+    });
+
+    const dotsPortfolio = paginationPortfolio.querySelectorAll('.pagination-dot');
+
+    function updateSlidesPortfolio() {
+      portfolioSlides.forEach((slide, index) => {
+        slide.classList.toggle('active-slide', index === currentIndexPortfolio);
+      });
+      dotsPortfolio.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndexPortfolio);
+      });
+      const offset = -currentIndexPortfolio * 100;
+      portfolioSlider.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlidePortfolio() {
+      currentIndexPortfolio = (currentIndexPortfolio + 1) % portfolioSlides.length;
+      updateSlidesPortfolio();
+    }
+
+    function prevSlidePortfolio() {
+      currentIndexPortfolio = (currentIndexPortfolio - 1 + portfolioSlides.length) % portfolioSlides.length;
+      updateSlidesPortfolio();
+    }
+
+    function goToSlidePortfolio(index) {
+      currentIndexPortfolio = index;
+      updateSlidesPortfolio();
+    }
+
+    nextBtnPortfolio.addEventListener('click', nextSlidePortfolio);
+    prevBtnPortfolio.addEventListener('click', prevSlidePortfolio);
+
+    // --- CLIENT TESTIMONIAL FADING SLIDER ENGINE ---
+    const testimonialSlides = document.querySelectorAll('.testimonial-item');
+    const paginationTestimonial = document.getElementById('testimonialPagination');
+    let currentIndexTestimonial = 0;
+
+    testimonialSlides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.className = `testimonial-dot ${index === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
+      dot.addEventListener('click', () => goToSlideTestimonial(index));
+      paginationTestimonial.appendChild(dot);
+    });
+
+    const dotsTestimonial = paginationTestimonial.querySelectorAll('.testimonial-dot');
+
+    function updateTestimonials() {
+      testimonialSlides.forEach((slide, index) => {
+        slide.classList.toggle('active-testimonial', index === currentIndexTestimonial);
+      });
+      dotsTestimonial.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndexTestimonial);
+      });
+    }
+
+    function nextSlideTestimonial() {
+      currentIndexTestimonial = (currentIndexTestimonial + 1) % testimonialSlides.length;
+      updateTestimonials();
+    }
+
+    function goToSlideTestimonial(index) {
+      currentIndexTestimonial = index;
+      updateTestimonials();
+    }
+
+    setInterval(nextSlideTestimonial, 8000);
+
+    // Intersection Observer for Scroll Animations
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // --- CORE CHATBOT ENGINE ---
+    const chatToggle = document.getElementById('chatToggle');
+    const chatBox = document.getElementById('chatBox');
+    const closeChat = document.getElementById('closeChat');
+    const sendBtn = document.getElementById('sendChat');
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+
+    function addMessage(text, isUser = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = isUser ? 'user-msg' : 'bot-msg';
+      msgDiv.innerText = text;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function botReply(userMessage) {
+      const lowerMsg = userMessage.toLowerCase();
+      if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('pricing') || lowerMsg.includes('how much')) {
+        return "Our typical operational tier starts at $5k for small parties, and $12k for mid-size weddings or corporate productions. Let's arrange a consultation for a full breakdown profile tailored to your vision.";
+      } else if (lowerMsg.includes('availability') || lowerMsg.includes('booked') || lowerMsg.includes('free date')) {
+        return "We are generally reserved 2-3 months in advance. For prime booking seasons (May-October), please get in touch 4 months early to guarantee staging spaces and ensure full team availability.";
+      } else if (lowerMsg.includes('timeline') || lowerMsg.includes('planning') || lowerMsg.includes('how long')) {
+        return "Standard planning phases scale across 3-6 months depending on complexity. If you require urgent execution, our rapid tactical loop can facilitate special provisions in under 6 weeks.";
+      } else if (lowerMsg.includes('deposit') || lowerMsg.includes('cancel')) {
+        return "A 30% safety deposit secures the active date block. Cancellation policies allow structural allowances up to 60 days prior to the calendar timeline milestone for a partial return.";
+      } else if (lowerMsg.includes('what events') || lowerMsg.includes('do you do') || lowerMsg.includes('services')) {
+        return "We specialize explicitly in corporate milestones, high-concept weddings, curated private social events, fundraisers, and real-time hybrid productions.";
+      } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
+        return "Hello! If you provide parameters regarding your event needs, I can guide you through our frameworks, timelines, or layout strategies.";
+      } else {
+        return "Understood. Our team will review this inquiry directly and trigger a personal response workflow within 1 hour. In the meantime, feel free to contact hello@redevents.com.";
+      }
+    }
+
+    function sendMessage() {
+      const msg = chatInput.value.trim();
+      if (msg === "") return;
+      addMessage(msg, true);
+      chatInput.value = "";
+      setTimeout(() => {
+        addMessage(botReply(msg), false);
+      }, 800);
+    }
+
+    chatToggle.addEventListener('click', () => {
+      chatBox.style.display = (chatBox.style.display === 'flex') ? 'none' : 'flex';
+    });
+    closeChat.addEventListener('click', () => chatBox.style.display = 'none');
+    sendBtn.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') sendMessage(); });
+  </script>
 </body>
 </html>
